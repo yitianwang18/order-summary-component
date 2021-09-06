@@ -16,14 +16,14 @@ html{
 body {
     /* background settings  */
     background-color: var(--pale-blue);
-    background-image: url('/images/pattern-background-mobile.svg');
+    background-image: url('./images/pattern-background-mobile.svg');
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 @media (min-width: 400px) {
     body {
-        background-image: url('/images/pattern-background-desktop.svg');
+        background-image: url('./images/pattern-background-desktop.svg');
     }
 }
 
