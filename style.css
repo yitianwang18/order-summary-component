@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+html{
+    /* Primary */
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --less-bright-blue: hsl(245, 75%, 70%);
+    /* Neutral */
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+    /* root font size */
+    font-size: 16px;
+}
+
+body {
+    /* background settings  */
+    background-color: var(--pale-blue);
+    background-image: url('/images/pattern-background-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media (min-width: 400px) {
+    body {
+        background-image: url('/images/pattern-background-desktop.svg');
+    }
+}
+
+main {
+    /* allocate 95% view height if available */
+    /* else act like block element */
+    min-height: 95vh;
+    /* centering card inside main */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    /* set flex-shrink to 0 so that content won't be hidden */
+    flex: 0 0 auto;
+}
+
+.card{
+    /* widths */
+    --card-width: 330px;
+    --side-margin: 5%;
+    width: var(--card-width);
+    /* coloring */
+    color: var(--desaturated-blue);
+    background-color: white;
+    text-align: center;
+    border-radius: 1.5rem;
+    /* hide svg corner */
+    overflow: hidden;
+}
+
+.card > * {
+    /* custom font for card */
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.card h1 {
+    color: var(--dark-blue);
+}
+
+.card > h1 {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.card > * {
+    margin: 1.5rem var(--side-margin);
+} 
+
+.card > img{
+    margin: auto;
+    max-width: 100%;
+}
+
+.card > h1, .card > p {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.card .plan {
+    border-radius: 1rem;
+    background-color: var(--very-pale-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+}
+
+.card .plan > * {
+    flex: 0 auto;
+}
+
+.card .plan .plan-content{
+    margin-top: 2%;
+    margin-right: 10%;
+}
+
+.card .plan .plan-content h1 {
+    font-size: 1rem;
+    margin-bottom: 0px;
+}
+
+.card .plan .plan-content p {
+    margin-top: 0px;
+}
+
+.card .plan > a {
+    font-weight: 700;
+    color: var(--bright-blue);
+    text-decoration-line: underline;
+}
+
+.card > button{
+    width: calc(100% - 2 * var(--side-margin));
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--bright-blue);
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1.5rem -0.5rem var(--less-bright-blue);
+}
+
+.card > a {
+    display: inline-block;
+    color: var(--desaturated-blue);
+    margin-top: 1rem;
+    font-weight: 700;
+    text-decoration-line: none;
+}
+
+@media (hover: hover) {
+    .card .plan > a:hover {
+        color: var(--less-bright-blue);
+        text-decoration-line: none;
+    }
+
+    .card > button:hover {
+        background-color: var(--less-bright-blue);
+    }
+
+    .card > a:hover {
+        color: var(--dark-blue);
+    }
+}
